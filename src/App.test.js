@@ -18,3 +18,9 @@ test('Existe tabela em Lamps/index?', () => {
   const tableElement = screen.getByRole("table");
   expect(tableElement).toHaveClass("table");
 });
+
+test("Existe botão editar em Lamps/index?", () => {
+  render(<App />);
+  const buttonElement = screen.getByText("Editar");
+  expect(buttonElement).toHaveClass("btn-outline-info");
+});
