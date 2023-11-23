@@ -39,6 +39,12 @@ export default function Lamps() {
 
                     >Editar</button>
 
+                    <button type="button"
+                    className="btn btn-outline-danger"
+                    style={{margin: '2px'}}
+
+                    >Excluir</button>
+
                   </td>
               </tr>
 
