@@ -3,6 +3,6 @@ import App from './App';
 
 test('Exist card em Lamps/index?', () => {
   render(<App />);
-  const linkElement = screen.getByText("Lamps");
+  const linkElement = screen.getByText("Lamps Crud");
   expect(linkElement).toBeInTheDocument();
 });
