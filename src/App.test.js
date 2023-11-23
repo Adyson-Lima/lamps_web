@@ -12,3 +12,9 @@ test('Existe botão novo em Lamps/index?', () => {
   const linkElement = screen.getByText("Novo");
   expect(linkElement).toBeInTheDocument();
 });
+
+test('Existe tabela em Lamps/index?', () => {
+  render(<App />);
+  const tableElement = screen.getByRole("table");
+  expect(tableElement).toHaveClass("table");
+});
