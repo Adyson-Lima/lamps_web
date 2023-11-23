@@ -24,3 +24,9 @@ test("Existe botão editar em Lamps/index?", () => {
   const buttonElement = screen.getByText("Editar");
   expect(buttonElement).toHaveClass("btn-outline-info");
 });
+
+test("Existe botão excluir em Lamps/index?", () => {
+  render(<App />);
+  const buttonElement = screen.getByText("Excluir");
+  expect(buttonElement).toHaveClass("btn btn-outline-danger");
+});
