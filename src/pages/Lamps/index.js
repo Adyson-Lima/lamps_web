@@ -10,6 +10,12 @@ export default function Lamps() {
       </div>
       <div className="card-body">
 
+        {/* botão para criar novo */}
+        <Link className="btn btn-success" style={{marginBottom: '10px'}}
+          to="/newupdate/0">Novo
+        </Link>
+
+
       </div>
     </div>
   );
