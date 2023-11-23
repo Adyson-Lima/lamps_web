@@ -15,6 +15,41 @@ export default function Lamps() {
           to="/newupdate/0">Novo
         </Link>
 
+        {/* inicio tabela */}
+      <table className="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">###</th>
+              <th scope="col">###</th>
+              <th scope="col">###</th>
+              <th scope="col">###</th>
+            </tr>
+          </thead>
+          <tbody> {/* inicio map de elementos tabela */}
+
+              <tr>
+                <th scope="row"></th>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <button
+                    type="button"
+                    className="btn btn-outline-info"
+                    style={{margin: '2px'}}
+
+                    >Editar</button>
+
+                    <button type="button"
+                    className="btn btn-outline-danger"
+                    style={{margin: '2px'}}
+
+                    >Excluir</button>
+                  </td>
+              </tr>
+
+            </tbody>
+        </table> {/* final tabela */}
+
 
       </div>
     </div>
