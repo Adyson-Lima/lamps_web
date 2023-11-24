@@ -10,6 +10,8 @@ export default function NewUpdate() {
       </div>
       <div className="card-body">
 
+        <Link className="btn btn-dark" style={{marginBottom: '5px'}} to="/">Home</Link>
+
       </div>
     </div>
   );

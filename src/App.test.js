@@ -46,8 +46,8 @@ describe("Testes da tela NewUpdate/index", () => {
   });
 
   test("Existe botão home em NewUpdate/index?", () => {
-    const linkElement = screen.getByText("Home");
-    expect(linkElement).toBeInTheDocument();
+    const linkElement = screen.getByRole("link");
+    expect(linkElement).toHaveClass("btn");
   });
 
 });
