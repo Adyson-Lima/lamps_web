@@ -1,15 +1,15 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-beforeEach(() => {
-  render(<App/>);
-  });
-
 describe("Testes da tela Lamps/index", () => {
 
+  beforeEach(() => {
+    render(<App/>);
+  });
+
   test('Existe card em Lamps/index?', () => {
-    const linkElement = screen.getByText("Lamps Crud");
-    expect(linkElement).toBeInTheDocument();
+    const cardElement = screen.getByText("Lamps Crud");
+    expect(cardElement).toBeInTheDocument();
   });
 
   test('Existe botão novo em Lamps/index?', () => {
@@ -31,15 +31,21 @@ describe("Testes da tela Lamps/index", () => {
     const buttonElement = screen.getByText("Excluir");
     expect(buttonElement).toHaveClass("btn btn-outline-danger");
   });
+
 });
 
 describe("Testes da tela NewUpdate/index", () => {
 
-  test("Existe card na tela NewUpdate/index?", () => {
-    const linkElement = screen.getByText("Lamps Cruds");
-    expect(linkElement).toBeInTheDocument();
-
+  beforeEach(() => {
+    render(<App/>);
   });
+
+  test("Existe card na tela NewUpdate/index?", () => {
+    const cardElement = screen.getByText("Lamps Crud");
+    expect(cardElement).toHaveClass("card-header");
+  });
+
+
 
 });
 
