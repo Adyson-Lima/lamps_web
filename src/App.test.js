@@ -23,13 +23,13 @@ describe("Testes da tela Lamps/index", () => {
   });
 
   test("Existe botão editar em Lamps/index?", () => {
-    const buttonElement = screen.getByText("Editar");
-    expect(buttonElement).toHaveClass("btn-outline-info");
+    const btnElement = screen.getByText("Editar");
+    expect(btnElement).toHaveClass("btn-outline-info");
   });
 
   test("Existe botão excluir em Lamps/index?", () => {
-    const buttonElement = screen.getByText("Excluir");
-    expect(buttonElement).toHaveClass("btn btn-outline-danger");
+    const btnElement = screen.getByText("Excluir");
+    expect(btnElement).toHaveClass("btn btn-outline-danger");
   });
 
 });
@@ -45,7 +45,10 @@ describe("Testes da tela NewUpdate/index", () => {
     expect(cardElement).toHaveClass("card-header");
   });
 
-
+  test("Existe botão home em NewUpdate/index?", () => {
+    const linkElement = screen.getByText("Home");
+    expect(linkElement).toBeInTheDocument();
+  });
 
 });
 
