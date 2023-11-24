@@ -50,5 +50,10 @@ describe("Testes da tela NewUpdate/index", () => {
     expect(linkElement).toHaveClass("btn");
   });
 
+  test("Existe form em NewUpdate/index?", () => {
+    const formElement = screen.getByRole("form");
+    expect(formElement).toBeInTheDocument();
+  });
+
 });
 
