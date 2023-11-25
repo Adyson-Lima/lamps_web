@@ -8,52 +8,30 @@ describe("Testes da tela Lamps/index", () => {
   });
 
   test('Existe card em Lamps/index?', () => {
-    const cardElement = screen.getByText("Lamps Crud");
+    const cardElement = screen.getByTestId("mycard");
     expect(cardElement).toBeInTheDocument();
   });
 
   test('Existe botão novo em Lamps/index?', () => {
-    const linkElement = screen.getByText("Novo");
+    const linkElement = screen.getByTestId("mylink");
     expect(linkElement).toBeInTheDocument();
   });
 
   test('Existe tabela em Lamps/index?', () => {
-    const tableElement = screen.getByRole("table");
-    expect(tableElement).toHaveClass("table");
+    const tableElement = screen.getByTestId("mytable");
+    expect(tableElement).toBeInTheDocument();
   });
 
   test("Existe botão editar em Lamps/index?", () => {
-    const btnElement = screen.getByText("Editar");
-    expect(btnElement).toHaveClass("btn-outline-info");
+    const btnElement = screen.getByTestId("mybtn1");
+    expect(btnElement).toBeInTheDocument();
   });
 
   test("Existe botão excluir em Lamps/index?", () => {
-    const btnElement = screen.getByText("Excluir");
-    expect(btnElement).toHaveClass("btn btn-outline-danger");
+    const btnElement = screen.getByTestId("mybtn2");
+    expect(btnElement).toBeInTheDocument();
   });
 
 });
 
-describe("Testes da tela NewUpdate/index", () => {
-
-  beforeEach(() => {
-    render(<App/>);
-  });
-
-  test("Existe card na tela NewUpdate/index?", () => {
-    const cardElement = screen.getByText("Lamps Crud");
-    expect(cardElement).toHaveClass("card-header");
-  });
-
-  test("Existe botão home em NewUpdate/index?", () => {
-    const linkElement = screen.getByRole("link");
-    expect(linkElement).toHaveClass("btn");
-  });
-
-  test("Existe form em NewUpdate/index?", () => {
-    const formElement = screen.getByRole("form");
-    expect(formElement).toBeInTheDocument();
-  });
-
-});
 

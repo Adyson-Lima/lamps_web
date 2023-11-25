@@ -4,19 +4,17 @@ import React, {useState, useEffect} from 'react';
 
 export default function Lamps() {
   return(
-    <div className="card border-primary" style={{marginTop: '20px'}}>
+    <div data-testid="mycard" className="card border-primary" style={{marginTop: '20px'}} >
       <div className="card-header bg-primary" style={{color: '#fff'}}>
         Lamps Crud
       </div>
       <div className="card-body">
 
-        {/* botão para criar novo */}
-        <Link className="btn btn-success" style={{marginBottom: '10px'}}
+        <Link data-testid="mylink" className="btn btn-success" style={{marginBottom: '10px'}}
           to="/newupdate/0">Novo
         </Link>
 
-        {/* inicio tabela */}
-      <table className="table table-hover">
+        <table data-testid="mytable" className="table table-hover">
           <thead>
             <tr>
               <th scope="col">###</th>
@@ -25,34 +23,32 @@ export default function Lamps() {
               <th scope="col">###</th>
             </tr>
           </thead>
-          <tbody> {/* inicio map de elementos tabela */}
+          <tbody>
+            <tr>
+              <th scope="row"></th>
+                <td></td>
+                <td></td>
+                <td>
 
-              <tr>
-                <th scope="row"></th>
-                  <td></td>
-                  <td></td>
-                  <td>
-                    <button
-                    type="button"
-                    className="btn btn-outline-info"
-                    style={{margin: '2px'}}
+                  <button
+                  data-testid="mybtn1"
+                  type="button"
+                  className="btn btn-outline-info"
+                  style={{margin: '2px'}}
+                  >Editar</button>
 
-                    >Editar</button>
+                  <button
+                  data-testid="mybtn2"
+                  type="button"
+                  className="btn btn-outline-danger"
+                  style={{margin: '2px'}}
+                  >Excluir</button>
 
-                    <button type="button"
-                    className="btn btn-outline-danger"
-                    style={{margin: '2px'}}
-
-                    >Excluir</button>
-
-                  </td>
-              </tr>
-
-            </tbody>
-        </table> {/* final tabela */}
-
-
-      </div>
-    </div>
+                </td>
+            </tr>
+          </tbody>
+      </table>
+  </div>
+</div>
   );
 }
