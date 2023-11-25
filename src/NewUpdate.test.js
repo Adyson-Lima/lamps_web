@@ -37,6 +37,10 @@ describe("Testes da tela NewUpdate/index", () => {
     expect(inputElement2).toBeInTheDocument();
   });
 
+  test("Existe botao enviar em NewUpdate/index?", () => {
+    const btnElement = screen.getByTestId("btnenviar");
+    expect(btnElement).toBeInTheDocument();
+  });
 
 });
 
