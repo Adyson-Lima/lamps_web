@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import NewUpdate from './pages/NewUpdate';
+import NewUpdate from '../pages/NewUpdate';
 import { BrowserRouter } from 'react-router-dom';
 
 describe("Testes da tela NewUpdate/index", () => {

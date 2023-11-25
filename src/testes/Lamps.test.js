@@ -1,10 +1,15 @@
 import { render, screen } from '@testing-library/react';
-import App from './App';
+import Lamps from '../pages/Lamps';
+import { BrowserRouter } from 'react-router-dom';
 
 describe("Testes da tela Lamps/index", () => {
 
   beforeEach(() => {
-    render(<App/>);
+    render(
+      <BrowserRouter>
+        <Lamps/>
+      </BrowserRouter>
+    );
   });
 
   test('Existe card em Lamps/index?', () => {
