@@ -23,13 +23,13 @@ describe("Testes da tela Lamps/index", () => {
   });
 
   test("Existe botão editar em Lamps/index?", () => {
-    const btnElement = screen.getByTestId("mybtn1");
-    expect(btnElement).toBeInTheDocument();
+    const btnElement1 = screen.getByTestId("mybtn1");
+    expect(btnElement1).toBeInTheDocument();
   });
 
   test("Existe botão excluir em Lamps/index?", () => {
-    const btnElement = screen.getByTestId("mybtn2");
-    expect(btnElement).toBeInTheDocument();
+    const btnElement2 = screen.getByTestId("mybtn2");
+    expect(btnElement2).toBeInTheDocument();
   });
 
 });

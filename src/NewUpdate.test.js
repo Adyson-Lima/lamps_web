@@ -27,6 +27,11 @@ describe("Testes da tela NewUpdate/index", () => {
     expect(formElement).toBeInTheDocument();
   });
 
+  test("Existe input1 em NewUpdate/index?", () => {
+    const inputElement1 = screen.getByTestId("input1");
+    expect(inputElement1).toBeInTheDocument();
+  });
+
 
 });
 
