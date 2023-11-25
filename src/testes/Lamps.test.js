@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import Lamps from '../pages/Lamps';
 import { BrowserRouter } from 'react-router-dom';
 
-describe("Testes da tela Lamps/index", () => {
+describe("Testes da tela Lamps", () => {
 
   beforeEach(() => {
     render(
@@ -12,29 +12,17 @@ describe("Testes da tela Lamps/index", () => {
     );
   });
 
-  it('Existe card em Lamps/index?', () => {
-    const cardElement = screen.getByTestId("mycard");
-    expect(cardElement).toBeInTheDocument();
-  });
+  [{descricao_teste: "Existe card em Lamps?", testid: "mycard"},
+   {descricao_teste: "Existe botão novo em Lamps?", testid: "mylink"},
+   {descricao_teste: "Existe tabela em Lamps?", testid: "mytable"},
+   {descricao_teste: "Existe botão editar em Lamps?", testid: "mybtn1"},
+   {descricao_teste: "Existe botão excluir em Lamps?", testid: "mybtn2"}
+  ].forEach(({descricao_teste, testid}) => {
 
-  it('Existe botão novo em Lamps/index?', () => {
-    const linkElement = screen.getByTestId("mylink");
-    expect(linkElement).toBeInTheDocument();
-  });
+    it(`${descricao_teste}`, () => {
+      expect(screen.getByTestId(`${testid}`)).toBeInTheDocument();
+    });
 
-  it('Existe tabela em Lamps/index?', () => {
-    const tableElement = screen.getByTestId("mytable");
-    expect(tableElement).toBeInTheDocument();
-  });
-
-  it("Existe botão editar em Lamps/index?", () => {
-    const btnElement1 = screen.getByTestId("mybtn1");
-    expect(btnElement1).toBeInTheDocument();
-  });
-
-  it("Existe botão excluir em Lamps/index?", () => {
-    const btnElement2 = screen.getByTestId("mybtn2");
-    expect(btnElement2).toBeInTheDocument();
   });
 
 });

@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import NewUpdate from '../pages/NewUpdate';
 import { BrowserRouter } from 'react-router-dom';
 
-describe("Testes da tela NewUpdate/index", () => {
+describe("Testes da tela NewUpdate", () => {
 
   beforeEach(() => {
     render(
@@ -12,34 +12,28 @@ describe("Testes da tela NewUpdate/index", () => {
     );
   });
 
-  it("Existe card em NewUpdate/index?", () => {
-   const cardElement = screen.getByTestId("mycard");
-   expect(cardElement).toBeInTheDocument();
+  it("Existe card em NewUpdate?", () => {
+   expect(screen.getByTestId("mycard")).toBeInTheDocument();
   });
 
-  it("Existe botão home em NewUpdate/index?", () => {
-   const linkElement = screen.getByTestId("mylink");
-   expect(linkElement).toBeInTheDocument();
+  it("Existe botão home em NewUpdate?", () => {
+   expect(screen.getByTestId("mylink")).toBeInTheDocument();
   });
 
-  it('Existe form em NewUpdate/index?', () => {
-    const formElement = screen.getByTestId("myform");
-    expect(formElement).toBeInTheDocument();
+  it('Existe form em NewUpdate?', () => {
+    expect(screen.getByTestId("myform")).toBeInTheDocument();
   });
 
-  it("Existe input1 em NewUpdate/index?", () => {
-    const inputElement1 = screen.getByTestId("input1");
-    expect(inputElement1).toBeInTheDocument();
+  it("Existe input1 em NewUpdate?", () => {
+    expect(screen.getByTestId("input1")).toBeInTheDocument();
   });
 
-  it("Existe input2 em NewUpdate/index?", () => {
-    const inputElement2 = screen.getByTestId("input2");
-    expect(inputElement2).toBeInTheDocument();
+  it("Existe input2 em NewUpdate?", () => {
+    expect(screen.getByTestId("input2")).toBeInTheDocument();
   });
 
-  it("Existe botao enviar em NewUpdate/index?", () => {
-    const btnElement = screen.getByTestId("btnenviar");
-    expect(btnElement).toBeInTheDocument();
+  it("Existe botao enviar em NewUpdate?", () => {
+    expect(screen.getByTestId("btnenviar")).toBeInTheDocument();
   });
 
 });
