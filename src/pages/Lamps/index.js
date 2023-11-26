@@ -1,8 +1,17 @@
 import {Link, useNavigate} from 'react-router-dom';
 import React, {useState, useEffect} from 'react';
-//import api from '../../services/api';
+import api from '../../services/api';
 
 export default function Lamps() {
+
+  const [my_lamps, setLamps] = useState([]);
+  const navigate = useNavigate();
+
+  // READ, carrega dados da api
+  useEffect(() => {
+    api.get("api/v1/lamps",{}).then(response => {setLamps(response.data)})
+  },[]);
+
   return(
     <div data-testid="mycard" className="card border-primary" style={{marginTop: '20px'}} >
       <div className="card-header bg-primary" style={{color: '#fff'}}>
@@ -17,17 +26,18 @@ export default function Lamps() {
         <table data-testid="mytable" className="table table-hover">
           <thead>
             <tr>
-              <th scope="col">###</th>
-              <th scope="col">###</th>
-              <th scope="col">###</th>
-              <th scope="col">###</th>
+              <th scope="col">ID</th>
+              <th scope="col">Modelo</th>
+              <th scope="col">Descrição</th>
+              <th scope="col">Ações</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <th scope="row"></th>
-                <td></td>
-                <td></td>
+            {my_lamps.map(lamp =>(
+              <tr key={lamp.id}>
+              <th scope="row">{lamp.id}</th>
+                <td>{lamp.lamp_model}</td>
+                <td>{lamp.description}</td>
                 <td>
 
                   <button
@@ -46,6 +56,8 @@ export default function Lamps() {
 
                 </td>
             </tr>
+            ))}
+
           </tbody>
       </table>
   </div>
