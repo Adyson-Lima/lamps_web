@@ -9,8 +9,28 @@ export default function Lamps() {
 
   // READ, carrega dados da api
   useEffect(() => {
-    api.get("api/v1/lamps",{}).then(response => {setLamps(response.data)})
+    api.get("api/v1/lamps",{})
+    .then(response => {setLamps(response.data)})
   },[]);
+
+  // UPDATE, atualiza dados na api
+  async function updateLamp(id){
+    try{
+      navigate(`/newupdate/${id}`);
+    }catch(err){
+      alert("Erro ao atualizar!");
+    }
+  }
+
+  // DELETE, apaga dados na api
+  async function deleteLamp(id){
+    try{
+      await api.delete(`api/v1/lamps/${id}`,{});
+      setLamps(my_lamps.filter(lamp => lamp.id !== id));
+    }catch(err){
+      alert("Erro ao excluir!");
+    }
+  }
 
   return(
     <div data-testid="mycard" className="card border-primary" style={{marginTop: '20px'}} >
@@ -45,6 +65,7 @@ export default function Lamps() {
                   type="button"
                   className="btn btn-outline-info"
                   style={{margin: '2px'}}
+                  onClick={() => updateLamp(lamp.id)}
                   >Editar</button>
 
                   <button
@@ -52,6 +73,7 @@ export default function Lamps() {
                   type="button"
                   className="btn btn-outline-danger"
                   style={{margin: '2px'}}
+                  onClick={() => deleteLamp(lamp.id)}
                   >Excluir</button>
 
                 </td>
